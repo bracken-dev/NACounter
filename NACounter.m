@@ -12,6 +12,7 @@
 //  Have fun :-)
 
 #import "NACounter.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define kTagCounterLeft 4720
 #define kTagCounterRight 4721
@@ -84,10 +85,10 @@
     if (rightChanged) {
         CABasicAnimation *rightAnim = [CABasicAnimation animationWithKeyPath:@"position"];
         rightAnim.fromValue = [NSValue valueWithCGPoint:right.center];
-        if (rightDigit == 0) {
-            rightCenter.y = rightCenterStart.y - 11 * kCounterDigitDiff;
-            rightAnim.toValue = [NSValue valueWithCGPoint:rightCenter];
-        } else
+//        if (rightDigit == 0) {
+//            rightCenter.y = rightCenterStart.y - 11 * kCounterDigitDiff;
+//            rightAnim.toValue = [NSValue valueWithCGPoint:rightCenter];
+//        } else
             rightAnim.toValue = [NSValue valueWithCGPoint:rightCenter];
         rightAnim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
         rightAnim.duration = 0.3;
